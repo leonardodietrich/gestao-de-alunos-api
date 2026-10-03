@@ -1,0 +1,35 @@
+[
+  {
+    "nome": "Fernanda Alves",
+    "emailPrefix": "fernanda.alves",
+    "matriculaPrefix": "2025101",
+    "senha": "Senha@123",
+    "disciplinaId": "disciplina-matematica",
+    "trabalho": {
+      "titulo": "Lista de Exercícios - Álgebra",
+      "descricao": "Resolução dos exercícios do capítulo 3 sobre equações do 2º grau."
+    }
+  },
+  {
+    "nome": "Gabriel Torres",
+    "emailPrefix": "gabriel.torres",
+    "matriculaPrefix": "2025102",
+    "senha": "Senha@456",
+    "disciplinaId": "disciplina-historia",
+    "trabalho": {
+      "titulo": "Resenha - Revolução Francesa",
+      "descricao": "Resenha crítica sobre os principais eventos da Revolução Francesa."
+    }
+  },
+  {
+    "nome": "Helena Costa",
+    "emailPrefix": "helena.costa",
+    "matriculaPrefix": "2025103",
+    "senha": "Senha@789",
+    "disciplinaId": "disciplina-programacao-web",
+    "trabalho": {
+      "titulo": "Portfólio Pessoal",
+      "descricao": "Página pessoal desenvolvida com HTML, CSS e JavaScript."
+    }
+  }
+]

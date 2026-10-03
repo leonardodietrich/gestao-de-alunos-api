@@ -97,6 +97,40 @@ npm run dev
 O servidor sobe por padrão em `http://localhost:3000` (pode ser alterado com a variável de
 ambiente `PORT`).
 
+## Testes automatizados de API
+
+Os testes de API ficam em `test/` e usam **Mocha**, **SuperTest** e **Chai**, com carga de
+variáveis de ambiente via **Dotenv**.
+
+```bash
+# copie o arquivo de exemplo e ajuste se necessário
+cp .env.example .env
+
+# instalar dependências (inclui as libs de teste)
+npm install
+
+# subir uma instância do MongoDB acessível em MONGODB_URI (ver .env)
+
+# executar a suíte de testes
+npm test
+```
+
+Estrutura dos testes:
+
+- `test/helpers/authHelper.js` — helpers de login de **administrador** e de **aluno**, usados por
+  todos os cenários (credenciais do admin vêm do `.env`).
+- `test/helpers/dataFactory.js` — gera dados únicos de aluno a partir da massa de testes, evitando
+  conflitos ao rodar a suíte mais de uma vez.
+- `test/fixtures/alunos-trabalhos.json` — massa de dados (**Data-Driven Testing**): cada item gera
+  um cenário completo (aluno, disciplina e trabalho a ser entregue).
+- `test/aluno-cadastro-e-trabalho.test.js` — fluxo ponta a ponta: login como admin, cadastro do
+  aluno, matrícula na disciplina, login como o aluno recém-criado e registro da entrega do
+  trabalho.
+
+Os testes rodam automaticamente no **GitHub Actions** (veja
+[`.github/workflows/tests.yml`](.github/workflows/tests.yml)), que sobe um container do
+MongoDB como serviço para a execução da suíte.
+
 ### Configuração do MongoDB
 
 Por padrão, a API se conecta a um MongoDB local em
